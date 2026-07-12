@@ -1,0 +1,18 @@
+
+El análisis espacial de los errores del modelo permite estudiar la dificultad predictiva del modelo Top 99% de la Fase 4 desde dos niveles complementarios.
+
+En primer lugar, se analiza el comportamiento por aeropuerto físico de salida. Este enfoque distingue aeropuertos concretos dentro de una misma área urbana, por ejemplo JFK, LGA y EWR en el entorno de Nueva York. Para cada aeropuerto se calcula el error absoluto medio, el RMSE, el MAPE y el R2 sobre el conjunto de test.
+
+En segundo lugar, se analiza la dificultad predictiva por mercado o ciudad de salida mediante la variable origin_market. Este segundo análisis permite agrupar ciudades que cuentan con más de un aeropuerto y ofrece una visión más agregada del mercado aéreo.
+
+Además, se construyen dos mapas de rutas. El primero representa conexiones aeropuerto-aeropuerto, utilizando route_od. El segundo representa conexiones mercado-mercado, utilizando route_market_key. En ambos casos, las rutas se clasifican como fáciles o difíciles de predecir en función de si su MAE está por debajo o por encima de la mediana de errores de las rutas analizadas. Las líneas verdes representan rutas relativamente más fáciles de predecir, mientras que las líneas rojas representan rutas relativamente más difíciles.
+
+Esta validación complementa las métricas globales del modelo, ya que permite identificar en qué aeropuertos, mercados y rutas concretas el modelo funciona mejor o peor.
+
+A nivel de aeropuerto físico de salida, el aeropuerto más difícil de predecir es OAK, con un MAE medio de 123.74 dólares sobre 3810 observaciones. En el extremo opuesto, el aeropuerto más fácil de predecir es LGA, con un MAE medio de 56.24 dólares sobre 4632 observaciones.
+
+A nivel de mercado de salida, el mercado más difícil de predecir es SAN_FRANCISCO, con un MAE medio de 103.23 dólares. Este mercado agrupa los aeropuertos: OAK, SFO. El mercado más fácil de predecir es DALLAS_FORT_WORTH, con un MAE medio de 60.21 dólares.
+
+A nivel de ruta aeropuerto-aeropuerto, la ruta más difícil de predecir es OAK_ORD, con un MAE medio de 192.91 dólares. La ruta más fácil de predecir es EWR_BOS, con un MAE medio de 32.20 dólares.
+
+A nivel de ruta mercado-mercado, la conexión más difícil de predecir es MIAMI__SAN_FRANCISCO, con un MAE medio de 120.53 dólares. La conexión más fácil de predecir es ATLANTA__CHARLOTTE, con un MAE medio de 43.99 dólares.
