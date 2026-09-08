@@ -4,3 +4,4 @@ numpy
 scikit-learn
 joblib
 cloudpickle
+Python 3.14
