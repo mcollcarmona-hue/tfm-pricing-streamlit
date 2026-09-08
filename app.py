@@ -11,7 +11,7 @@ st.set_page_config(
 )
  
 APP_DIR = Path(__file__).parent
-FECHA_CADUCIDAD = date.fromisoformat("2026-07-28")
+FECHA_CADUCIDAD = date.fromisoformat("2026-12-31")
  
 hoy = datetime.today().date()
  
