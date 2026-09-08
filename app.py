@@ -356,7 +356,7 @@ with st.expander("Editar todas las variables usadas por el modelo"):
     df_features_editor = st.data_editor(
         df_features_editor,
         disabled=["feature"],
-        use_container_width=True,
+        width="stretch",
         height=420
     )
 
@@ -403,7 +403,7 @@ st.success(
 # ============================================================
 
 with st.expander("Ver vector final enviado al modelo"):
-    st.dataframe(X_pred.T.rename(columns={0: "valor"}), use_container_width=True)
+    st.dataframe(X_pred.T.rename(columns={0: "valor"}), width="stretch")
 
 st.divider()
 
